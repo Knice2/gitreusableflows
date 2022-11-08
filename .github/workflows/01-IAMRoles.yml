@@ -4,8 +4,8 @@ on:
 
 jobs:
   Plan_Dev:
-    if: github.ref == 'refs/heads/main'
-    uses: Knice2/gitreusableflows/.github/workflows/aws_tf_plan.yml@main
+    if: github.ref == 'refs/heads/dev'
+    uses: Knice2/gitreusableflows/.github/workflows/aws_tf_plan.yml@dev
     with:
       path: IAMRoles
       tf_vars_file: dev.tfvars
@@ -15,7 +15,7 @@ jobs:
 
   Deploy_Dev:
     needs: Plan_Dev
-    uses: Knice2/gitreusableflows/.github/workflows/aws_tf_plan.yml@main
+    uses: Knice2/gitreusableflows/.github/workflows/aws_tf_plan.yml@dev
     with:
       path: IAMRoles
       tf_vars_file: dev.tfvars
