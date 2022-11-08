@@ -10,7 +10,7 @@ terraform {
 		organization = "KniceKwikLab"
 
 		workspaces {
-			name = "AWSBackup"
+			name = "gitreusableflows"
 		}
 	}
 }
